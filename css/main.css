@@ -1850,7 +1850,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1b713e;
+  background: #47ddbf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3135,8 +3135,8 @@ ul.breadcrumb li+li:last-child {
   }
 }
 * {
-  cursor: url("https://raw.githubusercontent.com/solikear/MarkdownImg/master/cbi3b-trbyj-001.ico"), auto !important;
+  cursor: url("http://raw.githubusercontent.com/solikear/MarkdownImg/master/cbi3b-trbyj-001.ico"), auto !important;
 }
 :active {
-  cursor: url("https://raw.githubusercontent.com/solikear/MarkdownImg/master/cbi3b-trbyj-001.ico"), auto !important;
+  cursor: url("http://raw.githubusercontent.com/solikear/MarkdownImg/master/cbi3b-trbyj-001.ico"), auto !important;
 }
