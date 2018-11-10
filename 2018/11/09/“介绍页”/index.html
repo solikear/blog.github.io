@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +25,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -84,7 +91,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '6.5.0',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
@@ -319,9 +326,6 @@
   
 
   
-    
-
-  
 
   
     <div class="site-search">
@@ -363,6 +367,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -386,7 +393,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deer404">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="天空越黑，繁星越亮">
       <meta itemprop="image" content="https://raw.githubusercontent.com/solikear/MarkdownImg/master/ren2.png">
     </span>
 
@@ -625,7 +632,7 @@
                 
             
               <p class="site-author-name" itemprop="name">Deer404</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">天空越黑，繁星越亮</p>
           </div>
 
           
@@ -681,27 +688,35 @@
                 <span class="links-of-author-item">
                   
                   
-                    
-                  
                   
                     
                   
-                  <a href="https://github.com/solikear" title="GitHub &rarr; https://github.com/solikear" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/solikear" title="GitHub &rarr; https://github.com/solikear" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
                   
                   
-                    
-                  
                   
                     
                   
-                  <a href="https://space.bilibili.com/5277550/" title="Bilibili &rarr; https://space.bilibili.com/5277550/" rel="noopener" target="_blank"><i class="fa fa-fw fa-television"></i>Bilibili</a>
+                  <a href="https://space.bilibili.com/5277550/" title="Bilibili &rarr; https://space.bilibili.com/5277550/" rel="noopener" target="_blank"><i class="fa fa-fw fa-television"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://music.163.com/#/user/home?id=95130906" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=95130906" rel="noopener" target="_blank"><i class="fa fa-fw fa-music"></i></a>
                 </span>
               
             </div>
           
+          <div>
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=0&id=2188094155&auto=1&height=32"></iframe>
+          </div>
 
           
 
@@ -768,7 +783,7 @@
  
 
  
-   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.5.0</div>
+   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.5.0</div>
  
 -->
  
@@ -779,6 +794,16 @@
  <div class="theme-info">
    <div class="powered-by"></div>
    <span class="post-count">|本小站共989能量 |</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script> var now = new Date(); function createtime() { var grt= new Date("11/10/2018 9:00:00");
+ now.setTime(now.getTime()+250);
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+   hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); mnum = Math.floor(minutes);
+     if(String(mnum).length ==1 ){mnum = "0" + mnum;} seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); snum = Math.round(seconds);
+      if(String(snum).length ==1 ){snum = "0" + snum;} document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+       document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 |"; } setInterval("createtime()",250);
+       </script>   
  </div>
  
 
@@ -871,6 +896,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
