@@ -1,47 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>Android4大基本布局</title>
-      <link href="/2018/11/09/%E2%80%9C%E4%BB%8B%E7%BB%8D%E9%A1%B5%E2%80%9D/"/>
-      <url>/2018/11/09/%E2%80%9C%E4%BB%8B%E7%BB%8D%E9%A1%B5%E2%80%9D/</url>
-      
-        <content type="html"><![CDATA[<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><hr><h2 id="线性布局"><a href="#线性布局" class="headerlink" title="线性布局"></a>线性布局</h2><p>LinearLayout 是一个视图组（ViewGroup），用于使所有子视图在单个方向（垂直或水平）保持对齐。您可以使用android:orientation指定布局方向。vertical为垂直布局，horizontal是水平布局。<br>LinearLayout 的所有子视图依次堆叠，因此无论子视图有多宽，垂直列表每行均只有一个子视图，水平列表将只有一行高（最高子视图的高度加上内边距）。 LinearLayout 遵守子视图之间的“边距”以及每个子视图的“重力”（右对齐、居中对齐、左对齐）。</p><hr><p>权重相等的子视图<br>要创建一个线性布局，让每个子视图在屏幕上都占据相同的空间量，则将每个视图的 android:layout_height 均设置为 “0dp”（对于垂直布局），或将每个视图的android:layout_width 均设置为 “0dp”（对于水平布局）。 然后，将每个视图的 android:layout_weight 均设置为 “1”。</p><hr><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:paddingLeft=&quot;16dp&quot;</span><br><span class="line">    android:paddingRight=&quot;16dp&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot; &gt;</span><br><span class="line">    &lt;EditText</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:hint=&quot;@string/to&quot; /&gt;</span><br><span class="line">    &lt;EditText</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:hint=&quot;@string/subject&quot; /&gt;</span><br><span class="line">    &lt;EditText</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;0dp&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:gravity=&quot;top&quot;</span><br><span class="line">        android:hint=&quot;@string/message&quot; /&gt;</span><br><span class="line">    &lt;Button</span><br><span class="line">        android:layout_width=&quot;100dp&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_gravity=&quot;right&quot;</span><br><span class="line">        android:text=&quot;@string/send&quot; /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p><hr><h2 id="相对布局"><a href="#相对布局" class="headerlink" title="相对布局"></a>相对布局</h2><p>RelativeLayout又称相对布局，也是一种非常常用的布局，和LinearLayout的排列规则不同。<br>它可以通过相对定位的方式让控件出现在布局的任何位置。也正因为如此，RelativeLayout中的属性非常的多。</p><hr><p><strong>根据父容器定位</strong>:<br>layout_alignParentLeft 左对齐<br>layout_alignParentRight 右对齐<br>layout_alignParentTop 顶部对齐<br>layout_alignParentBottom 底部对齐<br>android:layout_centerHorizontal 水平居中<br>android:layout_centerVertical 垂直居中<br>android:layout_centerParent 中间位置<br><strong>根据兄弟组件定位</strong><br>layout_toLeftOf  参考组件的左边<br>layout_toRightOf 参考组件的右边<br>layout_above 参考组件的上方<br>Layout_below 参考组件的下方<br>layout_alignTop 对齐参考组件的上边界<br>layout_alignBottom 对齐参考组件的下边界<br>layout_alignLeft  对齐参考组件的左边界<br>layout_alignRight 对齐参考组件的右边界<br><strong>margin(偏移)</strong><br>layout_margin 设置组件上下左右的偏移量<br>layout_marginLeft 设置组件左边的偏移量<br>layout_marginRight 设置组件右边的偏移量<br>layout_marginTop 设置组件上面的偏移量<br>layout_marginBottom 设置组件下面的偏移量<br><strong>padding(填充)</strong><br>android:padding 往内部元素的上下左右填充一定边距<br>paddingLeft 往内部元素的左边填充一定边距<br>paddiingRight 往内部元素的右边填充一定边距<br>paddingTop 往内部元素的上面填充一定边距<br>paddingBottom 往内部元素的上面填充一定边距</p><hr><h2 id="帧布局"><a href="#帧布局" class="headerlink" title="帧布局"></a>帧布局</h2><p>FrameLayout又称为帧布局，这种布局没有方便的定位方式，所有控件都会默认摆放在布局的左上角。可以使用layout_gravity属性来指定控件在布局中的对齐方式。<br>由于定位方式的欠缺，导致它的应用场景比较少。</p><hr><h2 id="百分比布局"><a href="#百分比布局" class="headerlink" title="百分比布局"></a>百分比布局</h2><p>在其他的布局里只有LinearLayout支持使用layout_weight属性来实现按比例指定控件大小的功能。Android引入了一种全新的布局方式——百分比布局。<br>在这种布局中，我们可以不再使用wrap_content、match_parent的方式来指定控件的大小，而是允许直接指定控件在布局中所占的百分比，这样的话就可以轻松实现平分布局甚至任意比例分割布局的效果。<br>百分比布局只为FrameLayout和RelativeLayout进行了功能扩展，提供了PercentFrameLayout和PercentRelativeLayout这两个全新布局<br>要在build.gradle添加百分比布局<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation &apos;com.android.support:percent:22.2.0&apos;</span><br></pre></td></tr></table></figure></p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[git小记-11/14]]></title>
+    <url>%2F2018%2F11%2F14%2Fgit%2F</url>
+    <content type="text"><![CDATA[工作室平常学习以及在网上找代码时候，都会用到git那么什么是git呢？git是目前世界上最先进的分布式版本控制系统！对于我这种新手来说（菜鸡），git就是帮我管理文件的，我的源代码/图片/文档….等很多东西，都可以帮我管理，能帮我自动记录每次文件的改动，能撤销我的某个文件操作，实在是方便呢。那么说到了git,就要提到github了，github是世界上最大的代码存放网站和开源社区，你可以把自己的代码存到github，也可以看别人开源的项目，这是一个非常棒的事情！偷代码简直方便的不行，不用重复造轮子了（开源精神）从今天开始，我要把我所学到的git知识，上传到我的博客里，算是给自己一个小目标，希望能完成！]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android4大基本布局]]></title>
+    <url>%2F2018%2F11%2F09%2F%E2%80%9C%E4%BB%8B%E7%BB%8D%E9%A1%B5%E2%80%9D%2F</url>
+    <content type="text"><![CDATA[布局 线性布局LinearLayout 是一个视图组（ViewGroup），用于使所有子视图在单个方向（垂直或水平）保持对齐。您可以使用android:orientation指定布局方向。vertical为垂直布局，horizontal是水平布局。LinearLayout 的所有子视图依次堆叠，因此无论子视图有多宽，垂直列表每行均只有一个子视图，水平列表将只有一行高（最高子视图的高度加上内边距）。 LinearLayout 遵守子视图之间的“边距”以及每个子视图的“重力”（右对齐、居中对齐、左对齐）。 权重相等的子视图要创建一个线性布局，让每个子视图在屏幕上都占据相同的空间量，则将每个视图的 android:layout_height 均设置为 “0dp”（对于垂直布局），或将每个视图的android:layout_width 均设置为 “0dp”（对于水平布局）。 然后，将每个视图的 android:layout_weight 均设置为 “1”。 示例：123456789101112131415161718192021222324252627&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:paddingLeft=&quot;16dp&quot; android:paddingRight=&quot;16dp&quot; android:orientation=&quot;vertical&quot; &gt; &lt;EditText android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:hint=&quot;@string/to&quot; /&gt; &lt;EditText android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:hint=&quot;@string/subject&quot; /&gt; &lt;EditText android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;0dp&quot; android:layout_weight=&quot;1&quot; android:gravity=&quot;top&quot; android:hint=&quot;@string/message&quot; /&gt; &lt;Button android:layout_width=&quot;100dp&quot; android:layout_height=&quot;wrap_content&quot; android:layout_gravity=&quot;right&quot; android:text=&quot;@string/send&quot; /&gt;&lt;/LinearLayout&gt; 相对布局RelativeLayout又称相对布局，也是一种非常常用的布局，和LinearLayout的排列规则不同。它可以通过相对定位的方式让控件出现在布局的任何位置。也正因为如此，RelativeLayout中的属性非常的多。 根据父容器定位:layout_alignParentLeft 左对齐layout_alignParentRight 右对齐layout_alignParentTop 顶部对齐layout_alignParentBottom 底部对齐android:layout_centerHorizontal 水平居中android:layout_centerVertical 垂直居中android:layout_centerParent 中间位置根据兄弟组件定位layout_toLeftOf 参考组件的左边layout_toRightOf 参考组件的右边layout_above 参考组件的上方Layout_below 参考组件的下方layout_alignTop 对齐参考组件的上边界layout_alignBottom 对齐参考组件的下边界layout_alignLeft 对齐参考组件的左边界layout_alignRight 对齐参考组件的右边界margin(偏移)layout_margin 设置组件上下左右的偏移量layout_marginLeft 设置组件左边的偏移量layout_marginRight 设置组件右边的偏移量layout_marginTop 设置组件上面的偏移量layout_marginBottom 设置组件下面的偏移量padding(填充)android:padding 往内部元素的上下左右填充一定边距paddingLeft 往内部元素的左边填充一定边距paddiingRight 往内部元素的右边填充一定边距paddingTop 往内部元素的上面填充一定边距paddingBottom 往内部元素的上面填充一定边距 帧布局FrameLayout又称为帧布局，这种布局没有方便的定位方式，所有控件都会默认摆放在布局的左上角。可以使用layout_gravity属性来指定控件在布局中的对齐方式。由于定位方式的欠缺，导致它的应用场景比较少。 百分比布局在其他的布局里只有LinearLayout支持使用layout_weight属性来实现按比例指定控件大小的功能。Android引入了一种全新的布局方式——百分比布局。在这种布局中，我们可以不再使用wrap_content、match_parent的方式来指定控件的大小，而是允许直接指定控件在布局中所占的百分比，这样的话就可以轻松实现平分布局甚至任意比例分割布局的效果。百分比布局只为FrameLayout和RelativeLayout进行了功能扩展，提供了PercentFrameLayout和PercentRelativeLayout这两个全新布局要在build.gradle添加百分比布局1implementation &apos;com.android.support:percent:22.2.0&apos;]]></content>
       <categories>
-          
-          <category> android </category>
-          
+        <category>android</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>目前Android学习进展</title>
-      <link href="/2018/11/09/Android%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
-      <url>/2018/11/09/Android%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</url>
-      
-        <content type="html"><![CDATA[<p>待编辑…</p>]]></content>
-      
-      
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[目前Android学习进展]]></title>
+    <url>%2F2018%2F11%2F09%2FAndroid%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%2F</url>
+    <content type="text"><![CDATA[待编辑…]]></content>
       <categories>
-          
-          <category> android </category>
-          
+        <category>android</category>
       </categories>
-      
-      
-    </entry>
-    
-  
-  
+  </entry>
 </search>
